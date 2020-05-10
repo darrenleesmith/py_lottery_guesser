@@ -2,15 +2,16 @@ import random
 
 daList = []
 
-print("Number Generator V0.1\n")
+print("Number Generator v0.3")
 
 userRetry = bool(1)
 
 while(userRetry == 1):
 
-    userSel = int(input("Please select a number of numbers you would like: "))
+    userSel = int(input("\nPlease select a number of numbers you would like: "))
 
     def rangen():
+        
         rannum = random.randrange(1, 50)
         #print(rannum)
         if daList.count(rannum):
@@ -24,14 +25,10 @@ while(userRetry == 1):
         rangen()
     
     print("\nLucky numbers: ", daList)
+    daList.clear()
     
-    userCho = input("\nWould you like to try again? (yes or no) ")
-    if userCho == ("yes"):
-        daList.clear()
-        userRetry = bool(1)
-        
+    userCho = input("\nWould you like to try again? (type no to exit) ")
     if userCho == ("no"):
-        userRety = bool(0)
         break
 
 print("\nEnd")
